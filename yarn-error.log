@@ -1,0 +1,62 @@
+Arguments: 
+  /home/muhwezideo/.nvm/versions/node/v10.22.0/bin/node /usr/bin/yarn add bcrytjs
+
+PATH: 
+  /home/muhwezideo/.nvm/versions/node/v10.22.0/bin:/home/muhwezideo/bin:/usr/local/bin:/home/muhwezideo/.nvm/versions/node/v10.22.0/bin:/home/muhwezideo/bin:/usr/local/bin:/home/muhwezideo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/go/bin:/usr/local/go/bin:/usr/local/go/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  10.22.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/bcrytjs: Not found
+      at Request.params.callback [as _callback] (/usr/lib/node_modules/yarn/lib/cli.js:66987:18)
+      at Request.self.callback (/usr/lib/node_modules/yarn/lib/cli.js:140748:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (/usr/lib/node_modules/yarn/lib/cli.js:141720:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (/usr/lib/node_modules/yarn/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1145:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "devconnector",
+    "version": "1.0.0",
+    "description": "Application connecting developers",
+    "main": "index.js",
+    "scripts": {
+      "start": "node server.js",
+      "server": "nodemon server.js"
+    },
+    "author": "muhamood",
+    "license": "MIT",
+    "dependencies": {
+      "bcrypt": "^5.0.0",
+      "body-parser": "^1.19.0",
+      "express": "^4.17.1",
+      "gravatar": "^1.8.1",
+      "gravator": "^1.0.2",
+      "jsonwebtoken": "^8.5.1",
+      "mongoose": "^5.10.7",
+      "passport": "^0.4.1",
+      "passport-jwt": "^4.0.0",
+      "validator": "^13.1.17"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
