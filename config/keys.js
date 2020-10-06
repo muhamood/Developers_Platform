@@ -1,3 +1,4 @@
 module.exports ={
-    mongoURL:'mongodb://127.0.0.1/devconnector'
+    mongoURL:'mongodb://127.0.0.1/devconnector',
+    secretOrKey:'secret'
 };
