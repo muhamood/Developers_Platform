@@ -17,7 +17,7 @@ const validateLoginInput = require('../../validation/login');
 //@accss  Public
 router.get('/test', (req, res) => res.json({ msg: 'users works' }));
 
-//@route  GET api/users/register
+//@route  POST api/users/register
 //@desc  register users route
 //@accss  Public
 router.post('/register', (req, res) => {
