@@ -7,8 +7,15 @@ import Register from './components/auth/Register';
 import setAuthToken from './utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 import { setCurrentUser, logoutUser } from './actions/authActions';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import PrivateRoute from './components/common/PrivateRoute';
+import { clearCurrentProfile } from './actions/profileActions';
+import Dashboard from './components/dashboard/Dashboard';
+import CreateProfile from './components/create-profile/CreateProfile';
+import EditProfile from './components/edit-profile/EditProfile';
+// import AddExperience from './components/add-credentials/AddExperience';
+// import AddEducation from './components/add-credentials/AddEducation';
 import store from './store';
 import './App.css';
 
@@ -26,8 +33,8 @@ if (localStorage.jwtToken) {
   if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
-    // TODO: Clear current Profile
-
+    // Clear current Profile
+    store.dispatch(clearCurrentProfile());
     // Redirect to login
     window.location.href = '/login';
   }
@@ -43,6 +50,23 @@ function App() {
       <div className='container'>
       <Route exact path ='/login' component={ Login }/>
       <Route exact path ='/register' component={ Register }/>
+      <Switch>
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/create-profile"
+                  component={CreateProfile}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/edit-profile"
+                  component={EditProfile}
+                />
+              </Switch>
       </div>  
       <Footer/>
     </div>
